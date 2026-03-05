@@ -106,7 +106,7 @@ backend.port = 993
 backend.encryption.type = "tls"
 backend.login = "YOUR_GMAIL@gmail.com"
 backend.auth.type = "password"
-backend.auth.password = "YOUR_16_CHAR_APP_PASSWORD"
+backend.auth.raw = "YOUR_16_CHAR_APP_PASSWORD"
 
 message.send.backend.type = "smtp"
 message.send.backend.host = "smtp.gmail.com"
@@ -114,7 +114,7 @@ message.send.backend.port = 587
 message.send.backend.encryption.type = "start-tls"
 message.send.backend.login = "YOUR_GMAIL@gmail.com"
 message.send.backend.auth.type = "password"
-message.send.backend.auth.password = "YOUR_16_CHAR_APP_PASSWORD"
+message.send.backend.auth.raw = "YOUR_16_CHAR_APP_PASSWORD"
 ```
 
 Lock permissions:
@@ -124,6 +124,15 @@ chmod 600 ~/.config/himalaya/config.toml
 ```
 
 ---
+
+### Common config error (Himalaya v1.2.x)
+
+If you see an error like:
+
+- `unknown variant password, expected one of empty, raw, cmd, command, keyring`
+
+it means your config is using `*.auth.password`, which is invalid for this version.
+Use `*.auth.raw` (or `*.auth.cmd`) instead.
 
 ## 6) Test email connectivity
 
