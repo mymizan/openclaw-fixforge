@@ -1,7 +1,6 @@
 # OpenClaw Gateway Error: `systemctl is-enabled unavailable`
 
-```Update: ### Update: This happened because I logged in as root and then used `su` to switch to the target user, which ran OpenClaw in an incomplete session. The fix was to start a proper login shell—either with `su - target_user` or by logging in directly as the target user.
-```
+** Update: ### Update: This happened because I logged in as root and then used `su` to switch to the target user, which ran OpenClaw in an incomplete session. The fix was to start a proper login shell—either with `su - target_user` or by logging in directly as the target user. **
 
 ## Problem
 
